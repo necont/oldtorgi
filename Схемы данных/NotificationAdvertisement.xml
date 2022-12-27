@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            version="1.0" targetNamespace="http://torgi.gov.ru/opendata" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xsd:element name="fullNotification">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="notification" minOccurs="1" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="bidNumber" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                <xsd:annotation>
+                                    <xsd:documentation>Номер опубликованного извещения. Максимальная длина поля 20</xsd:documentation>
+                                </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="bidOrganization" minOccurs="1" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="bidOrgKind" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Вид организатор торгов. Максимальная длина поля 256</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="organizationId" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Код организатора торгов (личный номер)</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="fullName" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Наименование организатора торгов. Максимальная длина поля 512</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="headOrg" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Вышестоящая организация. Максимальная длина поля 4000</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="limitBidDeal" type="xsd:double" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Порог крупной сделки. 20 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="inn" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>ИНН организатора торгов. 12 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="kpp" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>КПП организатора торгов. 9 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="okato" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>ОКАТО организатора торгов. 12 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="okpo" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>ОКПО организатора торгов. 9 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="okved" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>ОКВЭД организатора торгов. 50 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="ogrn" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>ОГРН организатора торгов. 15 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="address" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Почтовый адрес организатора торгов. 256 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="phone" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Контактный телефон организатора торгов. 50 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="fax" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Номер факса организатора торгов. 50 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="location" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Фактический адрес организатора торгов, указанный в извещении. 512 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="common" minOccurs="1" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="bidKind" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор вида торгов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование вида торгов. Максимальная длина поля 256</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="bidForm" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор формы торгов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование формы торгов. Максимальная длина поля 256</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="bidUrl" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Адрес сайта. Максимальная длина поля 512</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="fio" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Контактное лицо. 250 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="lotNum" type="xsd:int" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Количество лотов извещения. 10 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="published" type="xsd:date" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Дата публикации извещения</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="lastChanged" type="xsd:date" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Дата последнего изменения</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="timeOut" type="xsd:date" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Срок отказа от проведения торгов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="notificationUrl" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Ссылка на извещение. 2000 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="documents" minOccurs="1" maxOccurs="1">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="doc" minOccurs="0" maxOccurs="unbounded">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="docType" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Тип документа. 256 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Описание документа. 512 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="created" type="xsd:date" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Дата создания документа</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="docUrl" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Ссылка на документ на официальном сайте</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="lot" minOccurs="1" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="lotNum" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Номер лота</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="contractTerm" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Срок договора доверительного управления. Длина поля 2000</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+
+                                        <xsd:element name="readonlyKladr" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Код местоположения по КЛАДРу</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Расшифровка местоположения. Максимальная длина поля 2000</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="newTypeProtocolPublished" type="xsd:boolean" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Был ли опубликован протокол, связанный с лотом или нет</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="notificationId" type="xsd:long" minOccurs="1" maxOccurs="1"></xsd:element>
+                                        <xsd:element name="location" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Описание места расположения лота. Максимальная длина поля 512</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="expYear" type="xsd:int" minOccurs="0" maxOccurs="1"/>
+                                        <xsd:element name="priceStep" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+                                        <xsd:element name="pricePerMonth" type="xsd:double" minOccurs="0" maxOccurs="1"/>
+                                        <xsd:element name="contractWarranty" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Обеспечение исполнения договора. Максимальная длина поля 1000</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="lotNumber" type="xsd:string" maxOccurs="1" minOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>номер лота</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <!--<xsd:element name="lotNumberInt" type="xsd:int" minOccurs="0" maxOccurs="1"/>-->
+                                        <xsd:element name="carcaseType" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Тип, вид рекламной конструкции. Максимальная длина поля 1000</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="kladrId" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Код местоположения по КЛАДРу</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="expDay" type="xsd:int" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Срок, в течение которого договор должен быть заключен, дни</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="bidStatus" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор статуса лота</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование статуса лота. 256 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="article" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор предмета торгов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование предмета торгов. 256 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="country" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор страны</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование страны. 256 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="kladrString" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Местоположение по Кладру</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1"></xsd:element>
+                                        <xsd:element name="expMonth" type="xsd:int" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Срок действия договора, месяц</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="dealFee" type="xsd:double" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Платеж за право заключения договора</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="lotPriceString" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Начальная (минимальная) цена лота (в валюте лота)</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>                                        <xsd:element name="kladrAndLocation" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+                                        <xsd:element name="idAsString" type="xsd:double" minOccurs="1" maxOccurs="1"></xsd:element>
+                                        <xsd:element name="lotPrice" type="xsd:double">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Начальная (минимальная) цена лота</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>                                        <xsd:element name="pricePerYear" type="xsd:double" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Ежегодный платеж</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="bidMember" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор участника торгов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование участника торгов. Максимальная длина поля 256</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="propKind" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Идентификатор вида собственности</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование вида собственности. Максимальная длина поля 256</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="kladrLocation" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+                                        <xsd:element name="contractType" minOccurs="1" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" type="xsd:long" minOccurs="1" maxOccurs="1"></xsd:element>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Описание документа. 512 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="depositSize" type="xsd:double"></xsd:element>
+                                        <xsd:element name="winner" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Наименование победителя торгов. Максимальная длина поля 256</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="inn" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>ИНН победителя торгов. 12 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="kpp" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>КПП победителя торгов. 9 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="ogrn" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>ОГРН победителя торгов. 15 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="location" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Фактический адрес победителя торгов, указанный в извещении. 512 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="phone" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Контактный телефон победителя торгов. 50 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="currency" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Валюта лота. 20 символов</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="currencyPercent" type="xsd:double" minOccurs="0" maxOccurs="1">
+                                            <xsd:annotation>
+                                                <xsd:documentation>Коэффициент уточнения курса для иностранной валюты</xsd:documentation>
+                                            </xsd:annotation>
+                                        </xsd:element>
+                                        <xsd:element name="paymentRequisites" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="bik" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>БИК. 9 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="bankName" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Название банка. 512 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="ks" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Корреспондирующий счет. 20 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="rs" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Расчетный счет. 20 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                    <xsd:element name="ps" type="xsd:string" minOccurs="0" maxOccurs="1">
+                                                        <xsd:annotation>
+                                                            <xsd:documentation>Лицевой счет. 30 символов</xsd:documentation>
+                                                        </xsd:annotation>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="documents" minOccurs="0" maxOccurs="1">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="doc" minOccurs="0" maxOccurs="unbounded">
+                                                        <xsd:complexType>
+                                                            <xsd:sequence>
+                                                                <xsd:element name="docType" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                                    <xsd:annotation>
+                                                                        <xsd:documentation>Тип документа. 256 символов</xsd:documentation>
+                                                                    </xsd:annotation>
+                                                                </xsd:element>
+                                                                <xsd:element name="description" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                                    <xsd:annotation>
+                                                                        <xsd:documentation>Описание документа. 512 символов</xsd:documentation>
+                                                                    </xsd:annotation>
+                                                                </xsd:element>
+                                                                <xsd:element name="created" type="xsd:date" minOccurs="0" maxOccurs="1">
+                                                                    <xsd:annotation>
+                                                                        <xsd:documentation>Дата создания документа</xsd:documentation>
+                                                                    </xsd:annotation>
+                                                                </xsd:element>
+                                                                <xsd:element name="docUrl" type="xsd:string" minOccurs="1" maxOccurs="1">
+                                                                    <xsd:annotation>
+                                                                        <xsd:documentation>Ссылка на документ на официальном сайте</xsd:documentation>
+                                                                    </xsd:annotation>
+                                                                </xsd:element>
+                                                            </xsd:sequence>
+                                                        </xsd:complexType>
+                                                    </xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
